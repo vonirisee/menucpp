@@ -2,7 +2,7 @@
 #include <conio.h>
 using namespace std;
 
-int redline[6];
+int redline[5];
 
 void info (){
   system("cls");
@@ -30,10 +30,19 @@ getch();
 void dataa(int redline[]){
   system ("cls");
   cout << "Input 6 angka" << endl;
-  for(int i = 0; i < 6; i++) {
+  for(int i = 0; i < 5; i++) {
     cout << "Angka ke " << (i+1) << ": ";
     cin >> redline[i];
   }
+  getch();
+}
+
+void output(){
+  system("cls");
+  cout << "berikut array yang telah di input" << endl;
+  for(int i = 0 ; i < 5; i++){
+    cout << redline[i] << " ";
+}
   getch();
 }
 
@@ -50,7 +59,7 @@ do
     dataa(redline);
     break;
    case '2':
-    mPertama("ke- dua");
+    output();
     /* code */ 
     break;  
    case '3':

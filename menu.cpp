@@ -46,6 +46,40 @@ void output(){
   getch();
 }
 
+void BubbleSort(int data[], bool ascending) {
+  for(int i = 1; i < 5; i++) {
+      for(int j = 4; j >= i; j--) {
+          if ((ascending && data[j] < data[j-1]) || (!ascending && data[j] > data[j-1])) {
+              swap(data[j], data[j-1]);  
+          }
+      }
+  }
+  cout << "\nArray setelah sorting (" << (ascending ? "Ascending" : "Descending") << "): ";
+  for(int i = 0 ; i < 5; i++) {
+      cout << data[i] << " ";
+  }
+  getch();
+}
+
+void sortingMenu() {
+  system("cls");
+  char choice;
+  cout << "Pilih metode sorting:" << endl;
+  cout << "1. Ascending" << endl;
+  cout << "2. Descending" << endl;
+  cout << "Masukan pilihan: ";
+  choice = getch();
+
+  if (choice == '1') {
+      BubbleSort(redline, true);
+  } else if (choice == '2') {
+      BubbleSort(redline, false);
+  } else {
+      cout << "Pilihan tidak valid!";
+      getch();
+  }
+}
+
 int main() {
 char pl;
 do
@@ -63,7 +97,7 @@ do
     /* code */ 
     break;  
    case '3':
-    mPertama("ke- tiga");
+    sortingMenu();
     /* code */
     break;  
    case '4':
